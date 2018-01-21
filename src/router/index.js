@@ -1,25 +1,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import goods from '@/components/goods/goods.vue'
-import seller from '@/components/seller/seller.vue'
-import feter from '@/components/feter/feter.vue'
+//引入子组件
+import Goods from '@/components/Goods/Goods'
+import Comments from '@/components/Comments/Comments'
+import Shops from '@/components/Shops/Shops'
+	
 Vue.use(Router)
 
 export default new Router({
   routes: [
+  	//配置默认情况下路由链路
     {
-      path: 'goods',
-      component: goods
+      path: '/',
+      name: 'Goods',
+      component: Goods
+    },
+    //配置路由链路
+    {
+      path: '/comments',
+      name: 'Comments',
+      component: Comments
     },
     {
-      path: '/seller',
-      name: 'seller',
-      component: seller
+      path: '/shops',
+      name: 'Shops',
+      component: Shops
     },
-    {
-      path: '/feter',
-      name: 'feter',
-      component: feter
-    }
   ]
 })
